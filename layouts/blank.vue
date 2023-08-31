@@ -1,6 +1,6 @@
 <script setup lang="ts">
 useMeta({
-  title: "MaterialPro Free NuxtJs 3 Dashboard",
+  title: "Sistema de Gestión Clínica",
 });
 </script>
 <template>
