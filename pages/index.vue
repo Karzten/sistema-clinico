@@ -7,7 +7,7 @@ import Blog from "../components/dashboard/blog/Blog.vue";
 </script>
 
 <template>
-  <v-row>
+  <!-- <v-row>
     <v-col cols="12" sm="12" lg="8"> <SalesOverview /></v-col>
     <v-col cols="12" sm="12" lg="4"><Blog /></v-col>
     <v-col cols="12" sm="12" lg="4">
@@ -16,5 +16,6 @@ import Blog from "../components/dashboard/blog/Blog.vue";
       <MyContacts />
     </v-col>
     <v-col cols="12" sm="12" lg="8"><Timeline /></v-col>
-  </v-row>
+  </v-row> -->
+  <div>Mr beast</div>
 </template>
