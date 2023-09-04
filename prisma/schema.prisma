@@ -1,0 +1,123 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlserver"
+  url      = env("DATABASE_URL")
+}
+
+model Usuarios {
+  usu_id    Int     @id @default(autoincrement())
+  usuario String  @unique
+  password String
+  correo String? @unique
+  perfil_url String @default("./assets/img/usuario_default.png")
+  estado String @default("ACTIVO")
+  rol Roles[]
+  medico Medicos[]
+  usu_creacion Int
+  usu_actualizacion Int
+  fecha_creacion DateTime @default(now())
+  fecha_actualizacion DateTime @default(now())
+}
+
+model Roles {
+  rol_id    Int     @id @default(autoincrement())
+  nombre String
+  descripcion String?
+  estado String @default("ACTIVO")
+  usuario Usuarios[]
+  permiso Permisos[]
+  usu_creacion Int
+  usu_actualizacion Int
+  fecha_creacion DateTime @default(now())
+  fecha_actualizacion DateTime @default(now())
+}
+
+model Permisos {
+  per_id    Int     @id @default(autoincrement())
+  nombre String
+  descripcion String?
+  estado String @default("ACTIVO")
+  rol Roles[]
+  usu_creacion Int
+  usu_actualizacion Int
+  fecha_creacion DateTime @default(now())
+  fecha_actualizacion DateTime @default(now())
+}
+
+model Especialidades {
+  esp_id    Int     @id @default(autoincrement())
+  nombre String
+  descripcion String?
+  estado String @default("ACTIVO")
+  usu_creacion Int
+  usu_actualizacion Int
+  fecha_creacion DateTime @default(now())
+  fecha_actualizacion DateTime @default(now())
+  medico Medicos[]
+}
+
+model Medicos {
+  med_id    Int     @id @default(autoincrement())
+  ap_paterno String
+  ap_materno String
+  nombres String
+  rne String
+  cmp String
+  tipo_documento String?
+  numero_documento String?
+  perfil_url String @default("./assets/img/usuario_default.png")
+  firma_url String @default("./assets/img/firma_default.png")
+  esp_id Int
+  especialidad Especialidades @relation(fields: [esp_id], references: [esp_id])
+  usu_id Int
+  usuario Usuarios @relation(fields: [usu_id], references: [usu_id])
+  estado String @default("ACTIVO")
+  usu_creacion Int
+  usu_actualizacion Int
+  fecha_creacion DateTime @default(now())
+  fecha_actualizacion DateTime @default(now())
+}
+
+model Pacientes {
+  historia    Int     @id @default(autoincrement())
+  ap_paterno String
+  ap_materno String
+  nombres String
+  tipo_documento String?
+  numero_documento String?
+  fecha_nacimiento DateTime?
+  sexo String?
+  direccion String?
+  telefono String?
+  celular String?
+  correo String?
+  orden_atencion Int?
+  observaciones String?
+  estado String @default("ACTIVO")
+  usu_creacion Int
+  usu_actualizacion Int
+  fecha_creacion DateTime @default(now())
+  fecha_actualizacion DateTime @default(now())
+}
+
+model Orden_Atencion {
+  orden_atencion    Int     @id @default(autoincrement())
+  historia Int
+  paciente String
+  total Decimal
+  igv Decimal
+  neto Decimal
+  descuento Decimal
+  descuento_seguro Decimal
+  estado String @default("GENERADO")
+  usu_creacion Int
+  usu_actualizacion Int
+  fecha_creacion DateTime @default(now())
+  fecha_actualizacion DateTime @default(now())
+}
