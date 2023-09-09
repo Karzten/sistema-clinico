@@ -14,7 +14,7 @@ const sidebarMenu = ref(sidebarItems);
       <div class="profile">
         <div class="profile-pic">
           <v-avatar size="45">
-            <img src="/images/users/user2.jpg" width="50" alt="Julia" />
+            <img src="/images/users/2.jpg" width="50" alt="Julia" />
           </v-avatar>
         </div>
         <div class="profile-name">
@@ -37,22 +37,6 @@ const sidebarMenu = ref(sidebarItems);
           </v-list-item>
         </template>
       </v-list>
-      <div class="pa-4 ma-4 bg-light-primary rounded-lg text-center">
-        <img src="/images/sidebar-buynow-bg.svg" />
-        <h4 class="font-weight-regular mb-3">Get Template for Free</h4>
-        <v-btn
-          class="mb-2"
-          href="https://www.wrappixel.com/templates/materialpro-free-nuxtjs-admin-template/"
-          block
-          >Download Free</v-btn
-        >
-        <v-btn
-          color="primary"
-          href="https://www.wrappixel.com/templates/materialpro-nuxtjs/"
-          block
-          >Check Pro</v-btn
-        >
-      </div>
     </div>
   </div>
 </template>

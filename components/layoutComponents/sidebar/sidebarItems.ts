@@ -1,32 +1,38 @@
 export default [
   {
-    title: "Dashboard",
+    title: "Inicio",
     icon: "mdi-view-dashboard-outline",
     to: "/",
   },
   {
-    title: "Alerts",
-    icon: "mdi-alert-circle-outline",
-    to: "/alerts",
+    title: "Médicos",
+    icon: "mdi-doctor",
+    to: "/medicos",
   },
   {
-    title: "Buttons",
-    icon: "mdi-radiobox-blank",
-    to: "/buttons",
+    title: "Pacientes",
+    icon: "mdi-account-injury",
+    to: "/pacientes",
   },
   {
-    title: "Cards",
-    icon: "mdi-card-outline",
-    to: "/cards",
-  },
-  {
-    title: "Carousel",
-    icon: "mdi-form-dropdown",
-    to: "/carousel",
-  },
-  {
-    title: "Tables",
+    title: "Citas",
     icon: "mdi-table",
-    to: "/tables",
+    to: "/citas",
+  },
+  {
+    title: "Historias Clínicas",
+    icon: "mdi-notebook-heart",
+    to: "/hclinicas",
+  },
+  {
+    title: "Roles",
+    icon: "mdi-badge-account-horizontal",
+    to: "/roles",
+  },
+  {
+    title: "Usuarios",
+    icon: "mdi-account",
+    to: "/usuarios",
   },
 ];
+

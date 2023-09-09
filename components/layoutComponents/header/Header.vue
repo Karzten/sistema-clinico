@@ -27,7 +27,7 @@ const userprofile = ref([
         :ripple="false"
       >
         <v-avatar size="35">
-          <img src="/images/users/user2.jpg" width="35" alt="Julia" />
+          <img src="/images/users/2.jpg" width="35" alt="Julia" />
         </v-avatar>
       </v-btn>
     </template>
