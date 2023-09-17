@@ -25,6 +25,11 @@ export default [
     to: "/hclinicas",
   },
   {
+    title: "Reportes",
+    icon: "mdi-file-chart",
+    to: "/reportes",
+  },
+  {
     title: "Roles",
     icon: "mdi-badge-account-horizontal",
     to: "/roles",

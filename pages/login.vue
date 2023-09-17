@@ -1,10 +1,10 @@
 <template>
     <div class="login-container">
       <div class="login-form">
-        <h2>Iniciar Sesión</h2>
+        <h2>¡Bienvenido!</h2>
         <form>
           <div class="form-group">
-            <label for="username">Nombre de Usuario</label>
+            <label for="username">Usuario</label>
             <input type="text" id="username" placeholder="Ingresa tu nombre de usuario" autocomplete="off"/>
           </div>
           <div class="form-group">
@@ -17,7 +17,8 @@
     </div>
   </template>
   
-  <style scoped>
+  <style lang="scss" scoped>
+  @import './assets/scss/variables.scss';
   .login-container {
     display: flex;
     justify-content: center;
@@ -30,12 +31,15 @@
     margin-bottom: 24px;
   }
   
-
   .login-form {
-    border: 1px solid #ccc;
-    padding: 20px;
+    @media screen and (min-width: $medium-screen) {
+      border: 1px solid #ccc;
+      box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+    }
+    border: none;
+    box-shadow: none;
+    padding: 24px;
     border-radius: 8px;
-    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
     max-width: 400px;
     width: 100%;
   }
@@ -78,15 +82,15 @@
     background-color: #0056b3;
   }
   
-  @media screen and (max-width: 600px) {
-    .login-form {
-      padding: 10px;
-    }
+  // @media screen and (max-width: 600px) {
+  //   .login-form {
+  //     padding: 10px;
+  //   }
   
-    .form-group {
-      margin-bottom: 15px;
-    }
-  }
+  //   .form-group {
+  //     margin-bottom: 15px;
+  //   }
+  // }
   </style>
 
 <script>
